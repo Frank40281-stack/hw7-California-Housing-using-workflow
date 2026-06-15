@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-06-15T07:08:10Z" agent="Mozilla/5.0" version="20.0.0" type="device">
+  <diagram id="workflow" name="California Housing Feature Selection Workflow">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="100" value="California Housing Feature Selection Pipeline Workflow" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="213.5" y="20" width="400" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Pipeline Steps -->
+        <mxCell id="101" value="1. Data Ingestion&#10;(Download housing.csv)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="90" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="102" value="2. Data Imputation&#10;(Train total_bedrooms Median)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="190" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="103" value="3. One-Hot Encoding&#10;(ocean_proximity dummy variables)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="290" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="104" value="4. Train/Test Split&#10;(80% Train, 20% Test)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="390" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="105" value="5. Standard Scaling&#10;(StandardScaler fit on Train)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="490" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="106" value="6. Feature Selection (9 Algorithms)&#10;- Pearson &amp; Spearman Corr&#10;- F-test Reg &amp; Mutual Info&#10;- RFE, SFS (Fwd), SBS (Bwd)&#10;- Lasso (L1) &amp; Random Forest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="293.5" y="590" width="240" height="90" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="107" value="7. Stepwise Subset Loop&#10;k = 1 to 13" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=center;" vertex="1" parent="1">
+          <mxGeometry x="303.5" y="720" width="220" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="108" value="8. Model Evaluation&#10;(Train Linear Reg on top k,&#10;Evaluate Test R2 &amp; MSE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="840" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="109" value="9. Sweet Spot &amp; Visual Generation&#10;(Save combined plot and table)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="940" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="110" value="10. Streamlit Dashboard Server&#10;(Serve interactive predictions)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=center;" vertex="1" parent="1">
+          <mxGeometry x="313.5" y="1040" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="201" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="101" target="102">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="202" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="102" target="103">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="203" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="103" target="104">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="204" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="104" target="105">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="205" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="105" target="106">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="206" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="106" target="107">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="207" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="107" target="108">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="208" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="108" target="109">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="209" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#475569;strokeWidth=1.5;" edge="1" parent="1" source="109" target="110">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Loop Back connection -->
+        <mxCell id="210" value="Repeat for k=1..13" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#B91C1C;strokeWidth=1.2;dashed=1;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="108" target="107">
+          <mxGeometry x="-0.5" y="-15" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="800" as="sourcePoint" />
+            <mxPoint x="280" y="760" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
