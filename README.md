@@ -1,5 +1,8 @@
 # California Housing Feature Selection Stepwise Evaluation (CRISP-DM Step 4)
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://hw7-california-housing-using-workflow-8edr8vtq7osjrpcegn2ymr.streamlit.app/)
+👉 **[Click Here for the Live Demo](https://hw7-california-housing-using-workflow-8edr8vtq7osjrpcegn2ymr.streamlit.app/)**
+
 This repository implements the **CRISP-DM Step 4 Stepwise Feature Selection Evaluation** on the California Housing dataset. It ranks features using **9 distinct feature selection algorithms**, evaluates them incrementally ($k \in [1, 13]$) using Linear Regression, generates a publication-quality dual-metric figure with a ranked table, and provides an interactive Streamlit dashboard.
 
 ---
