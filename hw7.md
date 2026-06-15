@@ -60,6 +60,7 @@
 - `feature_selection.py`：核心計算與高畫質圖表生成腳本。
 - `save_model.py`：訓練最佳特徵子集模型並序列化保存的腳本。
 - `california_housing_pipeline.joblib`：序列化保存的訓練後模型與標準化縮放器（.joblib 檔）。
+- `requirements.txt`：Python 專案依賴套件清單（requirements 檔）。
 - `app.py`：Streamlit 互動式分析儀表板。
 - `california_housing_feature_selection.png`：生成的評估圖表圖像。
 
