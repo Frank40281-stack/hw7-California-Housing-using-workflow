@@ -58,5 +58,7 @@ Open [http://localhost:8501](http://localhost:8501) in your browser.
 * `california_housing_feature_selection.png` - Generated combined visual report.
 * `california_housing_workflow.drawio` - Draw.io XML workflow diagram.
 * `california_housing_workflow.png` - Rendered workflow flowchart PNG image.
+* `save_model.py` - Script to train the model on sweet-spot features and serialize it.
+* `california_housing_pipeline.joblib` - Serialized model pipeline containing the model, scaler, and top features.
 * `hw7.md` - Homework summary report with Mermaid diagram (Traditional Chinese).
 * `README.md` - Repository overview (English).
